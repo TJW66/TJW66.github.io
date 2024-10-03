@@ -174,7 +174,18 @@
 <span id="more"></span>
 
 <h1 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h1><p>进入官网， 找到我需要下载的版本<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/package-manager">https://nodejs.org/zh-cn/download/package-manager</a></p>
-<p><img src="/home/tjw/.config/Typora/typora-user-images/image-20241003223143120.png" alt="image-20241003223143120"></p>
+<pre><code class="shell"># installs nvm (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+
+# download and install Node.js (you may need to restart the terminal)
+nvm install 20
+
+# verifies the right Node.js version is in the environment
+node -v # should print `v20.17.0`
+
+# verifies the right npm version is in the environment
+npm -v # should print `10.8.2`
+</code></pre>
 <p>执行以上命令</p>
 <pre><code class="shell">结果执行到：
 nvm install 20

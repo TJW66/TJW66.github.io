@@ -21,21 +21,16 @@
 ]]></content>
   </entry>
   <entry>
-    <title>tjw</title>
-    <url>/2024/10/23/06/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>信息收集</title>
     <url>/2024/10/23/47/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h2 id="工商数据收集（主要收集企业股权架构）"><a href="#工商数据收集（主要收集企业股权架构）" class="headerlink" title="工商数据收集（主要收集企业股权架构）"></a>工商数据收集（主要收集企业股权架构）</h2><ol>
+    <content><![CDATA[<h2 id="工商数据收集（主要收集企业股权架构）"><a href="#工商数据收集（主要收集企业股权架构）" class="headerlink" title="工商数据收集（主要收集企业股权架构）"></a>工商数据收集（主要收集企业股权架构）</h2><ol>
 <li>爱企查</li>
 <li>企查查</li>
 <li>小蓝本</li>
 <li>天眼查</li>
 </ol>
+<span id="more"></span>
+
 <p>具体实战：</p>
 <p>第一步：得到一个网址后，到<a href="http://www.aizhan.com/">www.aizhan.com</a> ,进行whois查询，得到其他的后缀域名，看是否与主站有关联。（ip反查，查找域名）</p>
 <p>​	其他工具微步情报社区(<a href="https://x.threatbook.com/)%E3%80%81[Whois](https://ipwhois.cnnic.net.cn/)%E3%80%81icp%E5%A4%87%E6%A1%88%E6%9F%A5%E8%AF%A2www.beianx.cn%E3%80%81https://beian.miit.gov.cn/#/Integrated/recordQuery">https://x.threatbook.com/)、[Whois](https://ipwhois.cnnic.net.cn/)、icp备案查询www.beianx.cn、https://beian.miit.gov.cn/#/Integrated/recordQuery</a></p>
@@ -56,16 +51,14 @@
 ]]></content>
   </entry>
   <entry>
-    <title></title>
-    <url>/2024/10/23/52/</url>
-    <content><![CDATA[<h1 id="安全见闻"><a href="#安全见闻" class="headerlink" title="安全见闻"></a>安全见闻</h1><h2 id="编程语言学习推荐"><a href="#编程语言学习推荐" class="headerlink" title="编程语言学习推荐"></a>编程语言学习推荐</h2><ol>
+    <title>安全见闻</title>
+    <url>/2024/10/23/16/</url>
+    <content><![CDATA[<h2 id="编程语言学习推荐"><a href="#编程语言学习推荐" class="headerlink" title="编程语言学习推荐"></a>编程语言学习推荐</h2><ol>
 <li>python首推</li>
 <li>JavaScript</li>
 <li>php（白盒审计）</li>
 </ol>
 <span id="more"></span>
-
-
 
 
 

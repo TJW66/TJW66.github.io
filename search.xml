@@ -21,6 +21,30 @@
 ]]></content>
   </entry>
   <entry>
+    <title>安全见闻</title>
+    <url>/2024/10/23/16/</url>
+    <content><![CDATA[<h2 id="编程语言学习推荐"><a href="#编程语言学习推荐" class="headerlink" title="编程语言学习推荐"></a>编程语言学习推荐</h2><ol>
+<li>python首推</li>
+<li>JavaScript</li>
+<li>php（白盒审计）</li>
+</ol>
+<span id="more"></span>
+
+
+
+<h2 id="web程序"><a href="#web程序" class="headerlink" title="web程序"></a>web程序</h2><p>构成：前端-后端-数据库-服务器</p>
+<p>前端语言：html（点击劫持）、css（有注入）、JavaScript（xss、dom型、反射性、存储型）</p>
+<p>后端语言：php、java、python、golang、c&#x2F;c++、nodejs、ruby</p>
+<p>数据库：关系型与非关系型数据库。mysql、sqlserver、access、mongodb、redis</p>
+<p>服务器程序：apache、nginx、iis、tomcat、weblogic</p>
+<h2 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h2><p>脚本通俗来说就是拿过来以后可以直接看见它的源代码，可复制性高。</p>
+<p>python、php、JavaScript</p>
+<h2 id="注册表"><a href="#注册表" class="headerlink" title="注册表"></a>注册表</h2><p>windows才有注册表，linux只有类似的。</p>
+<p>防火墙</p>
+<p>自启动</p>
+]]></content>
+  </entry>
+  <entry>
     <title>信息收集</title>
     <url>/2024/10/23/47/</url>
     <content><![CDATA[<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="工商数据收集（主要收集企业股权架构）"><a href="#工商数据收集（主要收集企业股权架构）" class="headerlink" title="工商数据收集（主要收集企业股权架构）"></a>工商数据收集（主要收集企业股权架构）</h2><ol>
@@ -53,34 +77,10 @@
 <p>字典：通过github寻找</p>
 <h2 id="检查是否存在waf"><a href="#检查是否存在waf" class="headerlink" title="检查是否存在waf"></a>检查是否存在waf</h2><p>第一种，直接输入敏感字符</p>
 <p>存在waf页面显示：</p>
-<p><img src="/2024/10/23/47/image-20241023205554707.png" alt="image-20241023205554707"></p>
+<p><img src="/.io//hexo\source_posts\信息收集\Snipaste_2024-10-23_22-14-32.png"></p>
 <p>nmap探测：</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># 一种是http-waf-detect</span><br><span class="line">nmap -p80,<span class="number">443</span> -script=http-waf-detect ip</span><br><span class="line"># 一种是http-waf-fingerprint</span><br><span class="line">nmap -p80,<span class="number">443</span> -script--http-waf-fingerprint ip</span><br></pre></td></tr></table></figure>
 
-]]></content>
-  </entry>
-  <entry>
-    <title>安全见闻</title>
-    <url>/2024/10/23/16/</url>
-    <content><![CDATA[<h2 id="编程语言学习推荐"><a href="#编程语言学习推荐" class="headerlink" title="编程语言学习推荐"></a>编程语言学习推荐</h2><ol>
-<li>python首推</li>
-<li>JavaScript</li>
-<li>php（白盒审计）</li>
-</ol>
-<span id="more"></span>
-
-
-
-<h2 id="web程序"><a href="#web程序" class="headerlink" title="web程序"></a>web程序</h2><p>构成：前端-后端-数据库-服务器</p>
-<p>前端语言：html（点击劫持）、css（有注入）、JavaScript（xss、dom型、反射性、存储型）</p>
-<p>后端语言：php、java、python、golang、c&#x2F;c++、nodejs、ruby</p>
-<p>数据库：关系型与非关系型数据库。mysql、sqlserver、access、mongodb、redis</p>
-<p>服务器程序：apache、nginx、iis、tomcat、weblogic</p>
-<h2 id="脚本语言"><a href="#脚本语言" class="headerlink" title="脚本语言"></a>脚本语言</h2><p>脚本通俗来说就是拿过来以后可以直接看见它的源代码，可复制性高。</p>
-<p>python、php、JavaScript</p>
-<h2 id="注册表"><a href="#注册表" class="headerlink" title="注册表"></a>注册表</h2><p>windows才有注册表，linux只有类似的。</p>
-<p>防火墙</p>
-<p>自启动</p>
 ]]></content>
   </entry>
 </search>

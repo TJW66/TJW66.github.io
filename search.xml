@@ -23,17 +23,20 @@
   <entry>
     <title>信息收集</title>
     <url>/2024/10/23/47/</url>
-    <content><![CDATA[<h2 id="工商数据收集（主要收集企业股权架构）"><a href="#工商数据收集（主要收集企业股权架构）" class="headerlink" title="工商数据收集（主要收集企业股权架构）"></a>工商数据收集（主要收集企业股权架构）</h2><ol>
+    <content><![CDATA[<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="工商数据收集（主要收集企业股权架构）"><a href="#工商数据收集（主要收集企业股权架构）" class="headerlink" title="工商数据收集（主要收集企业股权架构）"></a>工商数据收集（主要收集企业股权架构）</h2><ol>
 <li>爱企查</li>
 <li>企查查</li>
 <li>小蓝本</li>
 <li>天眼查</li>
 </ol>
-<span id="more"></span>
-
 <p>具体实战：</p>
 <p>第一步：得到一个网址后，到<a href="http://www.aizhan.com/">www.aizhan.com</a> ,进行whois查询，得到其他的后缀域名，看是否与主站有关联。（ip反查，查找域名）</p>
-<p>​	其他工具微步情报社区(<a href="https://x.threatbook.com/)%E3%80%81[Whois](https://ipwhois.cnnic.net.cn/)%E3%80%81icp%E5%A4%87%E6%A1%88%E6%9F%A5%E8%AF%A2www.beianx.cn%E3%80%81https://beian.miit.gov.cn/#/Integrated/recordQuery">https://x.threatbook.com/)、[Whois](https://ipwhois.cnnic.net.cn/)、icp备案查询www.beianx.cn、https://beian.miit.gov.cn/#/Integrated/recordQuery</a></p>
+<p>​	其他工具:</p>
+<ol>
+<li>微步情报社区(<a href="https://x.threatbook.com/">https://x.threatbook.com/</a>)</li>
+<li>Whois(<a href="https://ipwhois.cnnic.net.cn/">https://ipwhois.cnnic.net.cn/</a>)</li>
+<li>icp备案查询<a href="https://beian.miit.gov.cn/#/Integrated/recordQuery">https://beian.miit.gov.cn/#/Integrated/recordQuery</a></li>
+</ol>
 <p>​	检测是否有cdn，在命令行使用nslookup来查看</p>
 <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">nslookup www.baidu.com</span><br></pre></td></tr></table></figure>
 
@@ -45,8 +48,12 @@
 
 
 <h2 id="其他信息收集"><a href="#其他信息收集" class="headerlink" title="其他信息收集"></a>其他信息收集</h2><p>利用插件wappalyzer，去查看cms指纹信息；通过指纹信息可以去查看历史漏洞。</p>
-<h2 id="检查是否存在waf"><a href="#检查是否存在waf" class="headerlink" title="检查是否存在waf"></a>检查是否存在waf</h2><p>nmap探测：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">nmap -p80,<span class="number">443</span> -script=http-waf-detect ip</span><br><span class="line">nmap -p80,<span class="number">443</span> -script--http-waf-fingerprint ip</span><br></pre></td></tr></table></figure>
+<p>字典：通过github寻找</p>
+<h2 id="检查是否存在waf"><a href="#检查是否存在waf" class="headerlink" title="检查是否存在waf"></a>检查是否存在waf</h2><p>第一种，直接输入敏感字符</p>
+<p>存在waf页面显示：</p>
+<p><img src="/2024/10/23/47/image-20241023205554707.png" alt="image-20241023205554707"></p>
+<p>nmap探测：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># 一种是http-waf-detect</span><br><span class="line">nmap -p80,<span class="number">443</span> -script=http-waf-detect ip</span><br><span class="line"># 一种是http-waf-fingerprint</span><br><span class="line">nmap -p80,<span class="number">443</span> -script--http-waf-fingerprint ip</span><br></pre></td></tr></table></figure>
 
 ]]></content>
   </entry>

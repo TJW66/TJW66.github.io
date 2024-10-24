@@ -3,9 +3,9 @@
   <entry>
     <title>python</title>
     <url>/2024/10/23/32/</url>
-    <content><![CDATA[<span id="more"></span>
+    <content><![CDATA[<h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><span id="more"></span>
 
-<h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>计算机不能直接执行程序员写代码，需要通过python解释器将源代码解释翻译成计算机可以执行的二进制码。</p>
+<h1 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h1><p>计算机不能直接执行程序员写代码，需要通过python解释器将源代码解释翻译成计算机可以执行的二进制码。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello,word!&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <!--more-->

@@ -128,7 +128,7 @@
   <entry>
     <title>信息收集</title>
     <url>/2024/10/23/47/</url>
-    <content><![CDATA[<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><!--mor-->
+    <content><![CDATA[<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><span id="more"></span>
 
 <p><img src="/.io//image-20241024073652216.png" alt="image-20241024073652216"></p>
 <h2 id="工商数据收集（主要收集企业股权架构）"><a href="#工商数据收集（主要收集企业股权架构）" class="headerlink" title="工商数据收集（主要收集企业股权架构）"></a>工商数据收集（主要收集企业股权架构）</h2><ol>
@@ -137,7 +137,7 @@
 <li>小蓝本</li>
 <li>天眼查</li>
 </ol>
-<span id="more"></span>
+<!--more-->
 
 <p>具体实战：</p>
 <p>第一步：得到一个网址后，到<a href="http://www.aizhan.com/">www.aizhan.com</a> ,进行whois查询，得到其他的后缀域名，看是否与主站有关联。（ip反查，查找域名）</p>

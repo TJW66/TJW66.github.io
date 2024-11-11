@@ -1,0 +1,354 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>网络基础 | TJW‘Blog</title><meta name="author" content="TJW"><meta name="copyright" content="TJW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="网络基础http协议简介：http协议，超文本传输协议。用于从万维网（www）服务器传输超文本到本地浏览器的传送协议。 超文本：一种可以链接到另一个文档或文本的文本。这种链接是通过特殊的标记或代码实现的，允许用户通过点击这些链接来跳转到其他内容，而无需离开当前页面或文档。 http工作于客户端-服务器（B&#x2F;S）架构上。 工作原理：浏览器作为http客户端通过url 向http服务即web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络基础">
+<meta property="og:url" content="https://tjw66.github.io/posts/91149a63.html">
+<meta property="og:site_name" content="TJW‘Blog">
+<meta property="og:description" content="网络基础http协议简介：http协议，超文本传输协议。用于从万维网（www）服务器传输超文本到本地浏览器的传送协议。 超文本：一种可以链接到另一个文档或文本的文本。这种链接是通过特殊的标记或代码实现的，允许用户通过点击这些链接来跳转到其他内容，而无需离开当前页面或文档。 http工作于客户端-服务器（B&#x2F;S）架构上。 工作原理：浏览器作为http客户端通过url 向http服务即web">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tjw66.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2024-11-11T14:01:21.000Z">
+<meta property="article:modified_time" content="2024-11-11T14:02:42.298Z">
+<meta property="article:author" content="TJW">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="http">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tjw66.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://tjw66.github.io/posts/91149a63.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7490c717ab8479fe2bc9b42906c577bf";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+btf.addGlobalFn('pjaxComplete', () => {
+  _hmt.push(['_trackPageview',window.location.pathname])
+}, 'baidu_analytics')
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '网络基础',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 历程</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/haimian.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">TJW‘Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">网络基础</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 历程</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">网络基础</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-11T14:01:21.000Z" title="发表于 2024-11-11 22:01:21">2024-11-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-11T14:02:42.298Z" title="更新于 2024-11-11 22:02:42">2024-11-11</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><div id="post-outdate-notice" data="{&quot;limitDay&quot;:365,&quot;messagePrev&quot;:&quot;It has been&quot;,&quot;messageNext&quot;:&quot;days since the last update, the content of the article may be outdated.&quot;,&quot;postUpdate&quot;:&quot;2024-11-11 22:02:42&quot;}" hidden></div><h1 id="网络基础"><a href="#网络基础" class="headerlink" title="网络基础"></a>网络基础</h1><h2 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h2><p>简介：http协议，超文本传输协议。用于从万维网（www）服务器传输超文本到本地浏览器的传送协议。</p>
+<p>超文本：一种可以链接到另一个文档或文本的文本。这种链接是通过特殊的标记或代码实现的，允许用户通过点击这些链接来跳转到其他内容，而无需离开当前页面或文档。</p>
+<p>http工作于客户端-服务器（B&#x2F;S）架构上。</p>
+<p>工作原理：浏览器作为http客户端通过url 向http服务即web 服务器发送所有请求。web服务器根据接收到的请求后，向客户端发送响应信息。</p>
+<h2 id="http协议求情方法"><a href="#http协议求情方法" class="headerlink" title="http协议求情方法"></a>http协议求情方法</h2><h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><p>用途：用于请求指定的资源。这是最常见的请求方法，当在浏览器中输入网址并访问时，通常会发送GET请求。</p>
+<p>特点：</p>
+<ol>
+<li>GET请求可以被缓存，除非指定了特定的缓存控制头部</li>
+<li>GET请求的参数通常附加在URL中，这使得它们可以被轻松的分享和书签（收藏），但也可能会暴露敏感信息，并且有长度限制。</li>
+<li>GET请求是安全的，即它不会对服务器上的资源进行修改。</li>
+</ol>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><p>用途：通常用于向服务器提交数据，以创建或更新资源。例如：在提交表单、上传文件等场景使用。</p>
+<p>特点：</p>
+<ol>
+<li>POST请求的数据通常放在请求体中，而不是URL中，因此可以传输更大量的数据，并且相对更安全，不容易暴露敏感信息</li>
+<li>POST请求一般不会被缓存</li>
+</ol>
+<h3 id="PUT"><a href="#PUT" class="headerlink" title="PUT"></a>PUT</h3><p>用途：用于更新服务器上的资源，PUT请求通常会将整个资源进行替换。</p>
+<p>特点：PUT请求是幂等的，即多次发送相同的PUT请求应该产生相同的结果。</p>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>用途：用于删除服务器上的指定资源。</p>
+<p>特点：DELETE请求也是幂等的，多次删除同一个资源应该产生相同的结果，即资源被删除后再次删除不会产生错误。</p>
+<h3 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h3><p>用途：与GET请求类似，但只返回头部信息，不返回资源的主体内容</p>
+<p>特点：可以用于检查资源的存在性&#x2F;获取资源的元信息（如修改时间、内容长度等），而无需下载整个资源，从而节省了带宽和时间。</p>
+<h3 id="OPTIONS"><a href="#OPTIONS" class="headerlink" title="OPTIONS"></a>OPTIONS</h3><p>用途：用于获取服务器支持的HTTP 请求方法和其他选项。</p>
+<p>特点：客户端可以通过OPTIONS 请求了解服务器对特定资源的访问权限和支持的操作。</p>
+<h3 id="TRACE"><a href="#TRACE" class="headerlink" title="TRACE"></a>TRACE</h3><p>用途：用于诊断和调试，客户端可以发送TRACE请求来查看请求在网络中经过的路径</p>
+<p>特点：通常在开发和测试环境中使用，以了解请求处理的过程</p>
+<h3 id="HTTP之URL"><a href="#HTTP之URL" class="headerlink" title="HTTP之URL"></a>HTTP之URL</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://www.baidu.com/web/579.html?replytocom=22#respond</span><br><span class="line">协议://域名:端口/虚拟目录/文件名?参数#锚点</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h2 id="HTTP协议状态码"><a href="#HTTP协议状态码" class="headerlink" title="HTTP协议状态码"></a>HTTP协议状态码</h2><p>用于表示服务器对请求的处理结果。</p>
+<h3 id="1xx：信息性状态码"><a href="#1xx：信息性状态码" class="headerlink" title="1xx：信息性状态码"></a>1xx：信息性状态码</h3><p>100 continue：表示目前为止一切正常，客户端可以继续发送请求或者忽略这个响应，一般客户端发送POST请求时，当请求体比较大，服务器可能先返回这个状态码，表示可以继续发送请求体。</p>
+<h3 id="2xx：成功状态码"><a href="#2xx：成功状态码" class="headerlink" title="2xx：成功状态码"></a>2xx：成功状态码</h3><p>200 ok：最常见的成功状态码，表示请求已成功，服务器已成功返回请求的数据。</p>
+<p>201 created：表示请求已成功，并在服务器创建新的资源，通常在POST请求用于闯将资源时返回。</p>
+<p>204 no content：表示请求已成功处理，但没有返回任何内容。通常用于PUT 或 DELETE请求成功后，表示资源已被更新或删除。</p>
+<h3 id="3xx：重定向状态码"><a href="#3xx：重定向状态码" class="headerlink" title="3xx：重定向状态码"></a>3xx：重定向状态码</h3><p>301 moved permanently：表示请求的资源已被永久移动到新的URL,客户端应使用新的URL进行后续请求。</p>
+<p>302 found：表示请求的资源临时被移动到了另一个URL，客户端应继续使用原有URL进行请求，但可以根据响应中的location头部字段进行重定向。</p>
+<p>304 not modified：表示资源未被修改，客户端可以使用缓存的版本。通常在客户端发送条件请求（如带有if-modified-since 或 if-none-match 头部）时返回。</p>
+<h3 id="4xx：客户端错误状态码"><a href="#4xx：客户端错误状态码" class="headerlink" title="4xx：客户端错误状态码"></a>4xx：客户端错误状态码</h3><p>400 bad request：表示客户端发送的请求有语法错误或无法被服务器理解。</p>
+<p>401 unauthorized：表示请求需要用户认证，通常是因为客户端没有提供有效的身份验证凭证。</p>
+<p>403 forhidden：表示服务器理解请求，但拒绝执行，通常是因为客户端没有足够的权限访问资源。</p>
+<p>404 not found：表示服务器无法找到请求的资源。</p>
+<p>405 method not allowed：表示请求的方法不被允许，例如使用了不支持的http 方法请求某个资源。</p>
+<h3 id="5xx：服务器错误状态码"><a href="#5xx：服务器错误状态码" class="headerlink" title="5xx：服务器错误状态码"></a>5xx：服务器错误状态码</h3><p>500 internal server error：表示服务器在处理请求时发生了内部错误，通常时服务器端的程序出现了异常。</p>
+<p>502 bad gateway：表示作为网关或代理的服务器在尝试执行请求时，从上游服务器接收到无效的响应。</p>
+<p>503 service unavailable：表示服务器暂时无法处理请求，通常是由于服务器过载或正在进行维护。</p>
+<p>504 gateway timeout：表示作为网关或代理的服务器在等待上游服务器响应时超时。</p>
+<h2 id="内网"><a href="#内网" class="headerlink" title="内网"></a>内网</h2><p>内网（Internal Network），又称局域网（Local Area Network, LAN），是指在一个相对封闭的地理区域内构建的计算机网络。这个区域可以是一个办公室、一栋大楼、一个校园或者一个工厂等。内网的主要特点是：</p>
+<ol>
+<li>地理范围有限：通常覆盖的地理范围较小，不像互联网那样全球范围连接。</li>
+<li>访问控制：内网通常受到严格的访问控制，只有授权的用户才能访问网络资源。</li>
+<li>数据传输速度快：由于覆盖范围小，内网的数据传输速度通常比互联网要快。</li>
+<li>私有性：内网主要用于组织内部的通信和资源共享，不对外公开。</li>
+<li>安全性：内网的安全性通常比互联网要高，因为它们不直接暴露在公共网络中，减少了外部攻击的风险。</li>
+</ol>
+<p>内网可以用于文件共享、打印服务、内部通信和协作工具等，是现代办公环境中不可或缺的一部分。</p>
+<h2 id="外网"><a href="#外网" class="headerlink" title="外网"></a>外网</h2><p>外网，通常指的是广域网（Wide Area Network, WAN），它是一个覆盖广泛地理区域的计算机网络。与内网（局域网）相比，外网的特点如下：</p>
+<ol>
+<li>地理范围广泛：外网可以跨越城市、国家甚至全球，连接不同的局域网和计算机系统。</li>
+<li>公共访问：外网通常对公众开放，用户可以通过互联网服务提供商（ISP）连接到外网。</li>
+<li>数据传输速度：由于覆盖范围广，外网的数据传输速度可能不如局域网快，受到网络带宽和距离的影响。</li>
+<li>开放性：外网是开放的，任何人都可以通过合法途径接入，因此安全性相对较低。</li>
+<li>成本：由于需要跨越长距离传输数据，外网的建设和维护成本通常较高。</li>
+<li>服务多样性：外网提供了丰富的服务，如电子邮件、在线视频、网页浏览、在线购物等。</li>
+<li>依赖性：外网依赖于各种网络技术和协议，如TCP&#x2F;IP协议，以及各种路由器和交换机等网络设备。</li>
+</ol>
+<p>外网的一个典型例子就是互联网（Internet），它是一个全球性的网络，连接了世界各地的计算机和服务器，允许用户访问和共享信息。互联网是外网技术的一个具体实现，也是最广为人知的外网形式。</p>
+<p>公网地址，通常指的是在互联网上可以被全球任何地方访问的IP地址。这种地址是唯一的，并且可以在全球范围内被识别和路由。</p>
+<p>私网地址，也称为私有IP地址，是指在互联网上不被直接路由的IP地址，它们仅在局域网（Local Area Network, LAN）或私有网络内部使用。私网地址的主要目的是为了节省公共IP地址资源，并确保内部网络的安全性。</p>
+<p>10.0.0.0-10.255.255.255</p>
+<p>172.16.0.0-172.31.255.255</p>
+<p>192.168.0.0-192.168.255.255</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://TJW66.github.io">TJW</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://tjw66.github.io/posts/91149a63.html">https://tjw66.github.io/posts/91149a63.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://TJW66.github.io" target="_blank">TJW‘Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%BD%91%E7%BB%9C/">网络</a><a class="post-meta__tags" href="/tags/web/">web</a><a class="post-meta__tags" href="/tags/http/">http</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">TJW</div><div class="author-info-description">一个正在学习的苦命人</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">1</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/TJW66"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/TJW66" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到TJW的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">网络基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text">http协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http%E5%8D%8F%E8%AE%AE%E6%B1%82%E6%83%85%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">http协议求情方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GET"><span class="toc-number">1.2.1.</span> <span class="toc-text">GET</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#POST"><span class="toc-number">1.2.2.</span> <span class="toc-text">POST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PUT"><span class="toc-number">1.2.3.</span> <span class="toc-text">PUT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DELETE"><span class="toc-number">1.2.4.</span> <span class="toc-text">DELETE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HEAD"><span class="toc-number">1.2.5.</span> <span class="toc-text">HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OPTIONS"><span class="toc-number">1.2.6.</span> <span class="toc-text">OPTIONS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TRACE"><span class="toc-number">1.2.7.</span> <span class="toc-text">TRACE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E4%B9%8BURL"><span class="toc-number">1.2.8.</span> <span class="toc-text">HTTP之URL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.3.</span> <span class="toc-text">HTTP协议状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1xx%EF%BC%9A%E4%BF%A1%E6%81%AF%E6%80%A7%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">1xx：信息性状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2xx%EF%BC%9A%E6%88%90%E5%8A%9F%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.3.2.</span> <span class="toc-text">2xx：成功状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3xx%EF%BC%9A%E9%87%8D%E5%AE%9A%E5%90%91%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.3.3.</span> <span class="toc-text">3xx：重定向状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4xx%EF%BC%9A%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%94%99%E8%AF%AF%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.3.4.</span> <span class="toc-text">4xx：客户端错误状态码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5xx%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%94%99%E8%AF%AF%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">1.3.5.</span> <span class="toc-text">5xx：服务器错误状态码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%91"><span class="toc-number">1.4.</span> <span class="toc-text">内网</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E7%BD%91"><span class="toc-number">1.5.</span> <span class="toc-text">外网</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/91149a63.html" title="网络基础">网络基础</a><time datetime="2024-11-11T14:01:21.000Z" title="发表于 2024-11-11 22:01:21">2024-11-11</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/img/haimian.jpg);"><div id="footer-wrap"><div class="copyright">&copy;2024 By TJW</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎你呀！</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>(() => {
+  const panguFn = () => {
+    if (typeof pangu === 'object') pangu.autoSpacingPage()
+    else {
+      btf.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+        .then(() => {
+          pangu.autoSpacingPage()
+        })
+    }
+  }
+
+  const panguInit = () => {
+    if (false){
+      GLOBAL_CONFIG_SITE.isPost && panguFn()
+    } else {
+      panguFn()
+    }
+  }
+
+  btf.addGlobalFn('pjaxComplete', panguInit, 'pangu')
+  document.addEventListener('DOMContentLoaded', panguInit)
+})()</script><div class="js-pjax"><script>(() => {
+  const runMermaid = ele => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    ele.forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = `%%{init:{ 'theme':'${theme}'}}%%\n`
+      const mermaidID = `mermaid-${index}`
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+      const renderMermaid = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      // mermaid v9 and v10 compatibility
+      typeof renderFn === 'string' ? renderMermaid(renderFn) : renderFn.then(({ svg }) => renderMermaid(svg))
+    })
+  }
+
+  const codeToMermaid = () => {
+    const codeMermaidEle = document.querySelectorAll('pre > code.mermaid')
+    if (codeMermaidEle.length === 0) return
+
+    codeMermaidEle.forEach(ele => {
+      const preEle = document.createElement('pre')
+      preEle.className = 'mermaid-src'
+      preEle.hidden = true
+      preEle.textContent = ele.textContent
+      const newEle = document.createElement('div')
+      newEle.className = 'mermaid-wrap'
+      newEle.appendChild(preEle)
+      ele.parentNode.replaceWith(newEle)
+    })
+  }
+
+  const loadMermaid = () => {
+    if (true) codeToMermaid()
+    const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+    if ($mermaid.length === 0) return
+
+    const runMermaidFn = () => runMermaid($mermaid)
+    btf.addGlobalFn('themeChange', runMermaidFn, 'mermaid')
+    window.loadMermaid ? runMermaidFn() : btf.getScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(runMermaidFn)
+  }
+
+  btf.addGlobalFn('encrypt', loadMermaid, 'mermaid')
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      pjax.loadUrl('/404.html')
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
